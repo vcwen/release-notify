@@ -1,0 +1,25 @@
+{
+  "name": "release-notify",
+  "version": "0.0.1",
+  "description": "notify PM about the new release",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcwen/release-notify.git"
+  },
+  "keywords": [],
+  "author": "vincent wen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcwen/release-notify/issues"
+  },
+  "homepage": "https://github.com/vcwen/release-notify#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.3",
+    "@actions/github": "^2.1.1",
+    "nodemailer": "^6.4.6"
+  }
+}

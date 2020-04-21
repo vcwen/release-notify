@@ -1,0 +1,30 @@
+name: 'Release Notify'
+description: 'Notify when new version is released'
+inputs:
+  host:
+    description: 'smtp host'
+    required: true
+  port:
+    description: 'smtp port'
+    required: true
+  user:
+    description: 'username for smtp'
+    required: true
+  password:
+    description: 'password for smtp'
+    required: true
+  sender:
+    description: 'name of sender'
+    required: true
+  from:
+    description: 'from mail address'
+    required: true
+  to:
+    description: 'recipients'
+    required: true
+  body:
+    description: 'README.md content'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
