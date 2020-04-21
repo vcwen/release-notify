@@ -14,7 +14,10 @@ try {
       pass: core.getInput('password')
     }
   })
-  const body = fs.readFileSync(path.resolve(process.env.HOME, 'README.md'))
+  fs.readdir('.', (err, files) => {
+    files.forEach((f) => console.log(f))
+  })
+  const body = fs.readFileSync(path.resolve('README.md'))
   const mail = {
     from: `"${core.getInput('sender')}" <${core.getInput('from')}>`,
     to: core.getInput('to'),
