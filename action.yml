@@ -22,9 +22,6 @@ inputs:
   to:
     description: 'recipients'
     required: true
-  body:
-    description: 'README.md content'
-    required: true
 runs:
   using: 'node12'
   main: 'index.js'
