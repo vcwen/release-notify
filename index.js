@@ -3,6 +3,7 @@ const github = require('@actions/github')
 const mailer = require('nodemailer')
 const fs = require('fs')
 const path = require('path')
+const { Converter } = require('showdown')
 
 try {
   const transport = mailer.createTransport({
@@ -17,12 +18,14 @@ try {
   fs.readdir('.', (err, files) => {
     files.forEach((f) => console.log(f))
   })
+  const converter = new Converter()
   const body = fs.readFileSync(path.resolve('README.md'))
+  const html = converter.makeHtml(body.toString())
   const mail = {
     from: `"${core.getInput('sender')}" <${core.getInput('from')}>`,
     to: core.getInput('to'),
     subject: 'Release Note',
-    html: body.toString()
+    html
   }
   const payload = JSON.stringify(github.context.payload, undefined, 2)
   console.log(`The event payload: ${payload}`)
