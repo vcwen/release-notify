@@ -20,7 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.2.3",
     "@actions/github": "^2.1.1",
-    "nodemailer": "^6.4.6",
+    "nodemailer": "^6.4.16",
     "showdown": "^1.9.1"
   }
 }
